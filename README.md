@@ -7,6 +7,7 @@ The application represents an online book shop and social network. Passport.js w
 ## Installation
 
 ### Docker
+>*To use the Docker installation, stop mongod, or change the code to set up MongoDB on a port different from **27017***
 
 1. **Compose**
 
