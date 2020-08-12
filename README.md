@@ -4,11 +4,11 @@ This repository contains the code for a MERN (Mongo, Express, React, Node.js) we
 
 The application represents an online book shop and social network. Passport.js was used for authentication, Socket.IO for the blogging and real-time chat parts of the website, and Formidable (middleware) assisted in client-to-server file uploads.
 
->*Containerization of the app is still in progress - The images are still being testing*
+***Containerization of the app is still in progress - The images are still being testing***
 
-### Installation
+## Installation
 
-**As of the latest version, the app requires MongoDB to be running on the host, on port 27017**
+>*As of the latest version, the app requires **MongoDB** to be running on the host, on port 27017*
 
 1. API Server
 
