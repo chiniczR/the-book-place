@@ -48,11 +48,11 @@ const uri = 'mongodb://localhost:27017/the-book-place'
 ```
   Save, and then open */social/chat-server.js* and, once more, change line 9:
 ```
-const uri = 'mongodb://mongo:27017/the-book-place'
+const mongoURI = "mongodb://mongo:27017/the-book-place"; 
 ```
   to
 ```
-const uri = 'mongodb://localhost:27017/the-book-place'
+const mongoURI = "mongodb://localhost:27017/the-book-place"; 
 ```
 
 2. **API Server**
