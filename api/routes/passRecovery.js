@@ -1,18 +1,16 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-  jwt = require('jsonwebtoken'),
-  bcrypt = require('bcrypt'),
-  User = mongoose.model('User'),
-  path = require('path'),
-  async = require('async'),
-  crypto = require('crypto'),
-  _ = require('lodash'),
-  hbs = require('nodemailer-express-handlebars'),
-  email = process.env.MAILER_EMAIL_ID || 'recovery.thebookplace@gmail.com',
-  pass = process.env.MAILER_PASSWORD || 'thebookpalace123',
-  nodemailer = require('nodemailer');
-  var Handlebars = require('handlebars');
+var mongoose = require('mongoose')
+var User = mongoose.model('User')
+var path = require('path')
+var async = require('async')
+var crypto = require('crypto')
+var _ = require('lodash')
+var hbs = require('nodemailer-express-handlebars')
+var email = process.env.MAILER_EMAIL_ID || 'recovery.thebookplace@gmail.com'
+var pass = process.env.MAILER_PASSWORD || 'thebookpalace123'
+var nodemailer = require('nodemailer');
+var Handlebars = require('handlebars');
 
 
 var smtpTransport = nodemailer.createTransport({

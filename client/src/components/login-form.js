@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
-import ForgotPassword from './forgot-password'
 import axios from 'axios'
 const crypto = require('crypto')
 const CryptoJS = require('crypto-js')

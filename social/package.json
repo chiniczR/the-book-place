@@ -1,0 +1,16 @@
+{
+  "name": "the-book-place-social",
+  "version": "1.0.0",
+  "description": "Social networking part of The Book Place",
+  "main": "chat_server.js",
+  "scripts": {
+    "chat": "node chat_server.js"
+  },
+  "author": "Rebeca Chinicz",
+  "license": "ISC",
+  "dependencies": {
+    "http": "0.0.1-security",
+    "mongoose": "^5.9.28",
+    "socket.io": "^2.3.0"
+  }
+}

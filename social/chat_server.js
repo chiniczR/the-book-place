@@ -1,9 +1,8 @@
 const server = require('http').createServer()
 const io = require('socket.io')(server)
 // const mongo = require('mongodb').MongoClient
-const Post = require('../database/models/post')
-const Room = require('../database/models/room')
-var cors = require('cors');
+const Post = require('./database/models/post')
+const Room = require('./database/models/room')
 
 
 const mongoose = require('mongoose');
