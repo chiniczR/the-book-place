@@ -47,13 +47,21 @@ const uri = 'mongodb://mongo:27017/the-book-place'
 ```
 const uri = 'mongodb://localhost:27017/the-book-place'
 ```
-  Save, and then open */social/chat-server.js* and, once more, change line 9:
+  Save, then open */social/chat-server.js* and, once more, change line 9:
 ```
 const mongoURI = "mongodb://mongo:27017/the-book-place"; 
 ```
   to
 ```
 const mongoURI = "mongodb://localhost:27017/the-book-place"; 
+```
+Save, then finally open */client/package.json*, and change line 26:
+```
+  "proxy": "http://api:8080",
+```
+to
+```
+  "proxy": "http://localhost:8080",
 ```
 
 2. **API Server**
