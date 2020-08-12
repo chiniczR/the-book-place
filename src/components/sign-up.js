@@ -160,8 +160,8 @@ render() {
 						<label className="form-label" htmlFor="Name">Name: </label>
 					</div>
 					<div className="col-3 col-mr-auto">
-						<div class="row">
-							<div class="col-6">
+						<div className="row">
+							<div className="col-6">
 								<input className="form-input"
 									placeholder="First Name"
 									type="text"
@@ -170,7 +170,7 @@ render() {
 									onChange={this.handleChange}
 								/>
 							</div>
-							<div class="col-6">
+							<div className="col-6">
 								<input className="form-input"
 									placeholder="Last Name"
 									type="text"
@@ -227,7 +227,7 @@ render() {
 						/>
 					</div>
 				</div>
-				<div class="container" style={{ fontSize: 'small', width: '30%', textAlign: 'left' }}>
+				<div className="container" style={{ fontSize: 'small', width: '30%', textAlign: 'left' }}>
 					<p>Please note that:</p>
 					<ul style={{ marginTop: '-1%' }}>
 						<li>All new users are registered as clients.</li>

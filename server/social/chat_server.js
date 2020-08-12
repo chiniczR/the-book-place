@@ -3,11 +3,13 @@ const io = require('socket.io')(server)
 // const mongo = require('mongodb').MongoClient
 const Post = require('../database/models/post')
 const Room = require('../database/models/room')
+var cors = require('cors');
+
 
 const mongoose = require('mongoose');
 const mongoURI = "mongodb://localhost:27017/the-book-place"; 
 const options = {
-    keepAlive: true,
+    keepAlive: false,
     keepAliveInitialDelay: 300000,
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -37,7 +39,6 @@ process.on('SIGINT', ()=>{
         process.exit(0);
     });
 });
-
 
 io.on('connection', function (client) {
   // Listen on initial data request

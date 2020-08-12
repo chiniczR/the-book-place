@@ -8,7 +8,7 @@ class Orders extends Component {
         super()
 
         this.state = { orders: null, books: null }
-
+        console.log(JSON.stringify(this.props))
         this.isEmployee = this.isEmployee.bind(this)
         this.getUserId = this.getUserId.bind(this)
         this.getOrders = this.getOrders.bind(this)
@@ -315,7 +315,7 @@ class Orders extends Component {
         return (
           <div>
             { (!this.props.loggedIn || this.props.role === 'supplier') &&
-                <p>You must be logged in as a client, a clerk or an admin to access this page</p>
+                <p>{ this.props.loggedIn } You must be logged in as a client, a clerk or an admin to access this page</p>
             }
             { (this.props.loggedIn && this.props.role === 'client') &&
                 <div>
@@ -331,18 +331,18 @@ class Orders extends Component {
                         <mark style={{ background: 'rgb(255,200,200,0.7)', marginRight: '0.5%' }}>To be deleted</mark>
                         <mark style={{ background: 'rgb(245,245,245,0.7)', border: '1px solid rgb(200,200,200)' }}>Unaltered</mark>
                     </p>
-                    <button class="btn-outline-primary" onClick={ this.saveClick.bind(this) } style={{ height: '40px',
+                    <button className="btn-outline-primary" onClick={ this.saveClick.bind(this) } style={{ height: '40px',
                         borderRadius: '5px', fontFamily: 'Josefin Sans', fontWeight: 'bolder', fontSize: 'large' }}>
-                        <i class="fa fw fa-floppy-o"/> Save Changes</button>
-                    <button class="btn-outline-info" onClick={this.reload} id="reloadOrdersBtn" style={{ height: '40px',
+                        <i className="fa fw fa-floppy-o"/> Save Changes</button>
+                    <button className="btn-outline-info" onClick={this.reload} id="reloadOrdersBtn" style={{ height: '40px',
                         borderRadius: '5px', fontFamily: 'Josefin Sans', fontWeight: 'bolder', fontSize: 'large' }}>
-                        <i class="fa fw fa-undo"/> Refresh/Reset</button>
+                        <i className="fa fw fa-undo"/> Refresh/Reset</button>
                 </div>
             }    
-            <div class="container-fluid" id="ordersTop" style={{ marginTop: '1%' }}>
-                <table class="table table-hover" style={{ textAlign: 'center' }}>
+            <div className="container-fluid" id="ordersTop" style={{ marginTop: '1%' }}>
+                <table className="table table-hover" style={{ textAlign: 'center' }}>
                     <thead>
-                        <tr class="bg-success" style={{ fontFamily: 'Josefin Sans' }}>
+                        <tr className="bg-success" style={{ fontFamily: 'Josefin Sans' }}>
                             <th scope="col-1">Order ID</th>
                             { (this.props.role === 'admin' || this.props.role === 'clerk') &&
                                 <th scope="col-2">Client ID</th>

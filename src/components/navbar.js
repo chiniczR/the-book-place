@@ -99,28 +99,28 @@ class Navbar extends Component {
                         {loggedIn ? (
                             <section className="navbar-section text-right" style={{ marginLeft: '-15%', textAlign: 'right', alignContent: 'right', marginRight: '2vw' }}>
                                 <Link to="/" className="btn btn-link text-secondary" onClick={this.aboutClick()}>
-                                      <span className="text-secondary" class="link-span"><i class="fa fw fa-home"/> HOME</span>
+                                      <span className="text-secondary" className="link-span"><i className="fa fw fa-home"/> HOME</span>
                                 </Link>
                                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                                  <span className="text-secondary" class="link-span"><i class="fa fw fa-sign-out"/> LOGOUT</span>
+                                  <span className="text-secondary" className="link-span"><i className="fa fw fa-sign-out"/> LOGOUT</span>
                                 </Link>
                                 <Link to="/cart" className="btn btn-link text-secondary" onClick={this.logClick()}>
-                                  <span className="text-secondary" class="link-span"><i class="fa fw fa-shopping-cart"/> MY CART</span>
+                                  <span className="text-secondary" className="link-span"><i className="fa fw fa-shopping-cart"/> MY CART</span>
                                 </Link>
                                 <Link to="/social" className="btn btn-link text-secondary" onClick={this.socialClick()}>
-                                  <span className="text-secondary" class="link-span"><i class="fa fw fa-users"/> SOCIAL</span>
+                                  <span className="text-secondary" className="link-span"><i className="fa fw fa-users"/> SOCIAL</span>
                                 </Link>
                             </section>
                         ) : (
                                 <section className="navbar-section">
                                     <Link to="/" className="btn btn-link text-secondary" onClick={this.aboutClick()}>
-                                      <span className="text-secondary" class="link-span"><i class="fa fw fa-home"/> HOME</span>
+                                      <span className="text-secondary" className="link-span"><i className="fa fw fa-home"/> HOME</span>
                                     </Link>
                                     <Link to="/login" className="btn btn-link text-secondary" onClick={this.logClick()}>
-                                      <span className="text-secondary" class="link-span"><i class="fa fw fa-sign-in"/> LOGIN</span>
+                                      <span className="text-secondary" className="link-span"><i className="fa fw fa-sign-in"/> LOGIN</span>
 				                            </Link>
                                     <Link to="/signup" className="btn btn-link" onClick={this.logClick()}>
-                                      <span className="text-secondary" class="link-span"><i class="fa fw fa-user-plus"/> SIGN UP</span>
+                                      <span className="text-secondary" className="link-span"><i className="fa fw fa-user-plus"/> SIGN UP</span>
 				                            </Link>
                                 </section>
                             )}

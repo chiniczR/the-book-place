@@ -281,53 +281,53 @@ class App extends Component {
   render() {
     return (
       <div className="App" style={{ fontFamily: 'Raleway' }}>
-        <div class="container-flex" id="menuNavbar" style={{ background: '#6DB866' }}>
+        <div className="container-flex" id="menuNavbar" style={{ background: '#6DB866' }}>
           {/* greet user if logged in: */}
           {this.state.loggedIn &&
             <p style={{ color: 'white', textAlign: 'right', marginRight: '1%', marginBottom: '-5px' }}>Hello, {this.state.firstName}!</p>
           }
-          <div class="row" id="menuRow">
-            <div class="col-10 text-left">
+          <div className="row" id="menuRow">
+            <div className="col-10 text-left">
               <h1 style={{ marginTop: '4%', marginLeft: '2vw', color: 'white', fontFamily: 'Josefin Sans', fontWeight: 'bold', fontSize: '300%' }}>The Book Place</h1>
             </div>
-            <div class="col-2 text-right" style={{ verticalAlign: 'bottom', textAlign: 'right', alignContent: 'right' }}>
+            <div className="col-2 text-right" style={{ verticalAlign: 'bottom', textAlign: 'right', alignContent: 'right' }}>
               <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
             </div>
           </div>
         </div>
 
           {/* Routes to different components */}
-          <div class="container-fluid" id="menuContainer" style={{ textAlign: 'center' }}>
-            <div class="row nav-tabs" style={{ textAlign: 'center', marginBottom: '2%', background: '#A0EB99' }}>
-              <div class="nav-item">
-                <Link class="nav-link nav-tab active" onClick={this.aboutClick()} id="aboutTab" to="/">About</Link>
+          <div className="container-fluid" id="menuContainer" style={{ textAlign: 'center' }}>
+            <div className="row nav-tabs" style={{ textAlign: 'center', marginBottom: '2%', background: '#A0EB99' }}>
+              <div className="nav-item">
+                <Link className="nav-link nav-tab active" onClick={this.aboutClick()} id="aboutTab" to="/">About</Link>
               </div>
-              <div class="nav-item">
-                <Link class="nav-link nav-tab" id="contactTab" to="/contact" onClick={this.contactClick()}>Contact</Link>
+              <div className="nav-item">
+                <Link className="nav-link nav-tab" id="contactTab" to="/contact" onClick={this.contactClick()}>Contact</Link>
               </div>
               {this.state.loggedIn &&
-                <div class="nav-item">
-                  <Link class="nav-link nav-tab" id="catalogTab" to="/catalog" onClick={this.catalogClick()}>Catalog</Link>
+                <div className="nav-item">
+                  <Link className="nav-link nav-tab" id="catalogTab" to="/catalog" onClick={this.catalogClick()}>Catalog</Link>
                 </div>
               }
               {this.state.role === 'admin' &&
-                <div class="nav-item">
-                  <Link class="nav-link nav-tab" id="userMgmtTab" to="/usermgmt" onClick={this.userMgmtClick()}>User Management</Link>
+                <div className="nav-item">
+                  <Link className="nav-link nav-tab" id="userMgmtTab" to="/usermgmt" onClick={this.userMgmtClick()}>User Management</Link>
                 </div>
               }
               {(this.state.role === 'admin' || this.state.role === 'supplier') &&
-                <div class="nav-item">
-                  <Link class="nav-link nav-tab" id="bookMgmtTab" to="/bookmgmt" onClick={this.bookMgmtClick()}>Book Management</Link>
+                <div className="nav-item">
+                  <Link className="nav-link nav-tab" id="bookMgmtTab" to="/bookmgmt" onClick={this.bookMgmtClick()}>Book Management</Link>
                 </div>
               }
               {(this.state.role === 'admin' || this.state.role === 'clerk' || this.state.role === 'client') &&
-                <div class="nav-item">
-                  <Link class="nav-link nav-tab" id="ordersTab" to="/orders" onClick={this.ordersClick()}>Orders</Link>
+                <div className="nav-item">
+                  <Link className="nav-link nav-tab" id="ordersTab" to="/orders" onClick={this.ordersClick()}>Orders</Link>
                 </div>
               }
               {this.state.loggedIn &&
-                <div class="nav-item">
-                  <Link class="nav-link nav-tab" id="meTab" to="/me" onClick={this.meClick()}><em><b>{ this.state.username }</b></em></Link>
+                <div className="nav-item">
+                  <Link className="nav-link nav-tab" id="meTab" to="/me" onClick={this.meClick()}><em><b>{ this.state.username }</b></em></Link>
                 </div>
               }
             </div>

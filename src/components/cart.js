@@ -182,10 +182,10 @@ class Cart extends Component {
                 <p>Your cart is empty!
                 </p>
             ) : (
-                <div class="container" id="leCart">
-                    <table class="table table-hover" style={{ textAlign: 'center' }}>
+                <div className="container" id="leCart">
+                    <table className="table table-hover" style={{ textAlign: 'center' }}>
                         <thead>
-                            <tr class="bg-success" style={{ fontFamily: 'Josefin Sans' }}>
+                            <tr className="bg-success" style={{ fontFamily: 'Josefin Sans' }}>
                                 <th scope="col-3"></th>
                                 <th scope="col-3">Book</th>
                                 <th scope="col-2">Price</th>
@@ -197,7 +197,7 @@ class Cart extends Component {
 
                         </tbody>
                     </table>
-                    <div class="container" style={{ textAlign: 'right', marginBottom: '3%' }}>
+                    <div className="container" style={{ textAlign: 'right', marginBottom: '3%' }}>
                         <h4 id="total" style={{ fontFamily: 'Josefin Sans', fontWeight: 'bold', marginRight: '10%' }}>Total: { this.state.total.toFixed(2) }$</h4>
                         <button className="btn btn-success" style={{ fontFamily: 'Josefin Sans', marginRight: '10%', 
                         fontSize: 'large', fontWeight: 'bold' }} id="orderBtn">Place Order</button>

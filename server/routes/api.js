@@ -17,12 +17,13 @@ const { isNull, isNumber } = require('util')
 */
 async function validSession (sess, roles = null) {
     if (isNull(sess)) return false
-    console.log('Session passport:', sess.passport)
+    console.log('Session:', sess)
     var now = Date.now()
-    if (now > sess.cookie.expires) {
+    if (now > Date.parse(sess.cookie.expires)) {
         console.log('Now:', now, ' but Expiration:', sess.cookie.expires)
         return false
     }
+    console.log(JSON.stringify(sess.passport))
     u_id = sess.passport.user._id
     doc = await User.findById(u_id)
     if (!doc || doc.length == 0) return false
@@ -82,7 +83,7 @@ router.post('/reset_password', passRecovery.reset_password);
 ** Protected Resources
 */
 router.get('/books', (req, res) => {
-    console.log('books get');
+    console.log('books get - req:', JSON.stringify(req.session));
     var valid = validSession(req.session)
     valid.then((v) => {
         console.log('>>>>>>>>>> Valid? ', v)

@@ -362,7 +362,7 @@ class Me extends Component {
         if (this.props.username) {
             var user = this.props.username
             axios
-                .post('api/score', {
+                .post('/api/score', {
                     username: user
                 })
                 .then((response) => {
@@ -391,10 +391,10 @@ class Me extends Component {
             <div className="row margin-sides">
                 <div className="col-6">
                     <h4>Groups</h4>
-                    <div class="container row scrollable tab-down-lg" id="groupsDiv">
+                    <div className="container row scrollable tab-down-lg" id="groupsDiv">
                     </div>
                     <h5>Requests to Join Your Groups</h5>
-                    <div class="container scrollable-sm" id="requestsDiv">
+                    <div className="container scrollable-sm" id="requestsDiv">
                         <table className="jrs-table">
                                 <thead className="bg-jrs-head bg-secondary text-light">
                                     <tr>
@@ -415,7 +415,7 @@ class Me extends Component {
                         <h4>My Profile</h4>
                         <form className="form-horizontal col-fill">
                             <div className="form-group pull-up">
-                                <div class="container"> 
+                                <div className="container"> 
                                     <div className="row">
                                         <div className="form-group col-6 text-danger">
                                             <div className="col-3 col-ml-auto">
@@ -480,8 +480,8 @@ class Me extends Component {
                                     <label className="form-label" htmlFor="Name">Name: </label>
                                 </div>
                                 <div className="col-9 col-mr-auto">
-                                    <div class="row">
-                                        <div class="col-6">
+                                    <div className="row">
+                                        <div className="col-6">
                                             <input className="form-input"
                                                 placeholder="First Name"
                                                 type="text"
@@ -490,7 +490,7 @@ class Me extends Component {
                                                 onChange={this.handleChange}
                                             />
                                         </div>
-                                        <div class="col-6">
+                                        <div className="col-6">
                                             <input className="form-input"
                                                 placeholder="Last Name"
                                                 type="text"
@@ -561,7 +561,7 @@ class Me extends Component {
                                     />
                                 </div>
                             </div>
-                            <div class="container" style={{ fontSize: 'small', width: '70%', textAlign: 'left' }}>
+                            <div className="container" style={{ fontSize: 'small', width: '70%', textAlign: 'left' }}>
                                 <p>Please note that:</p>
                                 <ul style={{ marginTop: '-1%' }}>
                                     <li>Changes take effect immediately.</li>

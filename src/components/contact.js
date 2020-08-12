@@ -58,10 +58,10 @@ class Contact extends Component {
         } else {
             return (
                 <div>
-                    <div class="container-flex">
-                      <div class="row" style={{ textAlign: 'left', left: 0 }}>
-                        <div class="col-lg-5" style={{ textAlign: 'left', left: 0, marginLeft: '2%' }}>
-                          <div class="container" style={{ textAlign: 'left', alignSelf: 'left' }}>
+                    <div className="container-flex">
+                      <div className="row" style={{ textAlign: 'left', left: 0 }}>
+                        <div className="col-lg-5" style={{ textAlign: 'left', left: 0, marginLeft: '2%' }}>
+                          <div className="container" style={{ textAlign: 'left', alignSelf: 'left' }}>
                           <h4 style={{ position: 'relative', marginLeft: '10%' }}>Send us a message and we will get back to you ASAP!</h4>
                             <form className="form-horizontal" style={{ marginLeft: '15%', width: '200%' }}>
                                 <div className="form-group">
@@ -133,11 +133,11 @@ class Contact extends Component {
                             </form>
                           </div>
                         </div>
-                        <div class="col-lg-1" style={{ textAlign: 'right', marginLeft: '3%' }}>
-                          <div class="vl"></div>
+                        <div className="col-lg-1" style={{ textAlign: 'right', marginLeft: '3%' }}>
+                          <div className="vl"></div>
                         </div>
-                        <div class="col-lg-6" style={{ textAlign: 'left', marginLeft: '-5%' }}>
-                          <div class="container">
+                        <div className="col-lg-6" style={{ textAlign: 'left', marginLeft: '-5%' }}>
+                          <div className="container">
                             <img src="images/contact.jpg" style={{ maxHeight: '500px' }} alt="Contact"/>
                           </div>
                         </div>

@@ -304,26 +304,26 @@ class Catalog extends Component {
           <p>You must be logged in to access this page
           </p>
         ) : (
-          <div class="container-fluid" id="totContainer">
-            <div id="inCartAlert" class="alert alert-info alert-dismissible" style={{ display: 'none' }}>
-              <button id="closeInCart" type="button" class="close" onClick={this.hideAlert.bind(this)}>&times;</button>
+          <div className="container-fluid" id="totContainer">
+            <div id="inCartAlert" className="alert alert-info alert-dismissible" style={{ display: 'none' }}>
+              <button id="closeInCart" type="button" className="close" onClick={this.hideAlert.bind(this)}>&times;</button>
             </div>
-            <div id="addedAlert" class="alert alert-success alert-dismissible" style={{ display: 'none' }}>
-              <button id="closeAdded" type="button" class="close" onClick={this.hideAlert.bind(this)}>&times;</button>
+            <div id="addedAlert" className="alert alert-success alert-dismissible" style={{ display: 'none' }}>
+              <button id="closeAdded" type="button" className="close" onClick={this.hideAlert.bind(this)}>&times;</button>
             </div>
-            <div class="row">
-              <div class="col-3">
-                <div class="container-fluid" style={{ border: '1px solid green', fontWeight: 'bold', textAlign: 'center' }}>
+            <div className="row">
+              <div className="col-3">
+                <div className="container-fluid" style={{ border: '1px solid green', fontWeight: 'bold', textAlign: 'center' }}>
                   Filter By Author
-                  <div class="scroll-container" id="authorFilter">
-                    <button class="btn btn-outline-info btn-sm active" id="showAllAuthorsBtn" onClick={this.showAllAuthors}> Show all</button>
+                  <div className="scroll-container" id="authorFilter">
+                    <button className="btn btn-outline-info btn-sm active" id="showAllAuthorsBtn" onClick={this.showAllAuthors}> Show all</button>
                   </div>
                 </div>
 
               </div>
-              <div class="col-9">
+              <div className="col-9">
                 <input type="text" id="searchBar" style={{ marginBottom: "2%" }} onKeyUp={this.searchFunction} placeholder="Search for books.."/>
-                <div class="container" id="catalogDiv">
+                <div className="container" id="catalogDiv">
 
                 </div>
               </div>

@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: Josefin Sans;
-    src: url('/Josefin_Sans/JosefinSans-Regular.ttf');
+    src: url('./Josefin_Sans/JosefinSans-Regular.ttf');
 }
 @font-face {
     font-family: Raleway;
-    src: url('/Lato/Lato-Regular.ttf');
+    src: url('./Lato/Lato-Regular.ttf');
 }
 
 body {

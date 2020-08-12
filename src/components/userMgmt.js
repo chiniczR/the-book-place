@@ -557,7 +557,7 @@ class UserMgmt extends Component {
                 {!this.props.loggedIn || this.props.role !== 'admin' ? (
                     <p>You must be and admin to access this page</p>
                 ) : (
-                    <div class="container-fluid">
+                    <div className="container-fluid">
                         <p>Welcome, admin user!<br/>
                         Please note that you cannot view a user's password, but you can change it.
                         </p>
@@ -568,19 +568,19 @@ class UserMgmt extends Component {
                             <mark style={{ background: 'rgb(255,200,200,0.7)', marginRight: '0.5%' }}>To be deleted</mark>
                             <mark style={{ background: 'rgb(245,245,245,0.7)', border: '1px solid rgb(200,200,200)' }}>Unaltered</mark>
                         </p>
-                        <button class="btn-outline-success" onClick={this.addUser.bind(this)} style={{ height: '40px',
+                        <button className="btn-outline-success" onClick={this.addUser.bind(this)} style={{ height: '40px',
                              borderRadius: '5px', fontFamily: 'Josefin Sans', fontWeight: 'bolder', fontSize: 'large' }}>
-                                <i class="fa fw fa-plus"/> Add User</button>
-                        <button class="btn-outline-primary" onClick={this.saveClick.bind(this)} style={{ height: '40px',
+                                <i className="fa fw fa-plus"/> Add User</button>
+                        <button className="btn-outline-primary" onClick={this.saveClick.bind(this)} style={{ height: '40px',
                              borderRadius: '5px', fontFamily: 'Josefin Sans', fontWeight: 'bolder', fontSize: 'large' }}>
-                                <i class="fa fw fa-floppy-o"/> Save Changes</button>
-                        <button class="btn-outline-info" onClick={this.reload} id="reloadBtn" style={{ height: '40px',
+                                <i className="fa fw fa-floppy-o"/> Save Changes</button>
+                        <button className="btn-outline-info" onClick={this.reload} id="reloadBtn" style={{ height: '40px',
                              borderRadius: '5px', fontFamily: 'Josefin Sans', fontWeight: 'bolder', fontSize: 'large' }}>
-                                <i class="fa fw fa-undo"/> Refresh/Reset</button>
-                        <div class="container-fluid" style={{ marginTop: '1%' }}>
-                            <table class="table table-hover" style={{ textAlign: 'center' }}>
+                                <i className="fa fw fa-undo"/> Refresh/Reset</button>
+                        <div className="container-fluid" style={{ marginTop: '1%' }}>
+                            <table className="table table-hover" style={{ textAlign: 'center' }}>
                                 <thead>
-                                    <tr class="bg-success" style={{ fontFamily: 'Josefin Sans' }}>
+                                    <tr className="bg-success" style={{ fontFamily: 'Josefin Sans' }}>
                                         <th scope="col-1">Username</th>
                                         <th scope="col-1">Name</th>
                                         <th scope="col-1">Email</th>

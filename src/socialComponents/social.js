@@ -189,29 +189,29 @@ class Social extends Component {
       function castPosVote() { sendVote(post._id, 1, post.votedPos, post.votedNeg, post.likes) }
       function castNegVote() { sendVote(post._id, -1, post.votedPos, post.votedNeg, post.likes) }
       return (
-        <div class='container-fluid ' style={{ alignContent: 'center', margin: '1%', display: 'inline-block', textAlign: 'center', maxWidth: '90%', backgroundColor: 'rgb(70,100,100,0.7)' }} key={post._id}>
-          <div class="row" style={{ background: 'rgb(160,160,160,0.7)' }}>
+        <div className='container-fluid ' style={{ alignContent: 'center', margin: '1%', display: 'inline-block', textAlign: 'center', maxWidth: '90%', backgroundColor: 'rgb(70,100,100,0.7)' }} key={post._id}>
+          <div className="row" style={{ background: 'rgb(160,160,160,0.7)' }}>
               <img src={ imgLocation } alt='posterProfile' style={{ margin: '1%', height: '4%', width: '4%', borderRadius: '50% '  }}></img>
               <h6 style={{ marginLeft: '1%', marginTop: '2vh' }}> { post.poster } @ { post.sharedWith }</h6> 
           </div>
-          <div class="row" style={{ margin: '1vh', display: 'inline-block', alignContent: 'center' }}>
+          <div className="row" style={{ margin: '1vh', display: 'inline-block', alignContent: 'center' }}>
             { parts[0] === 'text' &&
               <p>{ parts[1] }</p>
             }
             { parts[0] === 'link' &&
-              <a class='link' style={{ wordBreak: 'break-all' }} href={ parts[1] }>{ parts[1] }</a>
+              <a className='link' style={{ wordBreak: 'break-all' }} href={ parts[1] }>{ parts[1] }</a>
             }
             { parts[0] === 'img' &&
               <img src={ '/images/user_posts/' + parts[1] } alt='userPost' style={{ maxHeight: '100%', maxWidth: '100%' }}></img>
             }
           </div>
-          <div class='row' style={{ marginBottom: '1vh' }}>
-            <div class='col-5'>
-              <button class='text-success' disabled={ post.votedPos.includes(this.props.username) } style={{ background: 'transparent', border: 'transparent' }} onClick={ castPosVote }><i class="fa fw fa-thumbs-up" /></button>
+          <div className='row' style={{ marginBottom: '1vh' }}>
+            <div className='col-5'>
+              <button className='text-success' disabled={ post.votedPos.includes(this.props.username) } style={{ background: 'transparent', border: 'transparent' }} onClick={ castPosVote }><i className="fa fw fa-thumbs-up" /></button>
               <span style={{ marginLeft: '1vw', marginRight: '1vw' }}>{ post.likes }</span>
-              <button class='text-danger' disabled={ post.votedNeg.includes(this.props.username) } style={{ background: 'transparent', border: 'transparent' }} onClick={ castNegVote }><i class="fa fw fa-thumbs-down" /></button>
+              <button className='text-danger' disabled={ post.votedNeg.includes(this.props.username) } style={{ background: 'transparent', border: 'transparent' }} onClick={ castNegVote }><i className="fa fw fa-thumbs-down" /></button>
             </div>
-            <div class='col-7'>
+            <div className='col-7'>
               <span style={{ fontWeight: 'lighter', fontSize: '90%' }}>{ post.createdDate.split('T')[1].substr(0,8) + ' of ' + post.createdDate.split('T')[0] }</span>
             </div>
           </div>
@@ -397,9 +397,9 @@ class Social extends Component {
         document.getElementById('forMsgs').scrollTop = document.getElementById('forMsgs').scrollHeight
       }
       return(
-        <div class={ parClass } style={{ width: '100%', textAlign: rightOrLeft }} onLoad={ intoView }>
-          <p style={{ fontSize: 'small' }}>{ user } <i class="fa fw fa-caret-right" /> { msg.time.toString() }</p>
-          <div class={ classes } style={{ borderRadius: '15px', marginTop: '-2vh', width: 'fit-content' }}>
+        <div className={ parClass } style={{ width: '100%', textAlign: rightOrLeft }} onLoad={ intoView }>
+          <p style={{ fontSize: 'small' }}>{ user } <i className="fa fw fa-caret-right" /> { msg.time.toString() }</p>
+          <div className={ classes } style={{ borderRadius: '15px', marginTop: '-2vh', width: 'fit-content' }}>
             <p style={{ margin: '1vh' }}>{ msg.message }</p>
           </div>
           <br />
@@ -570,28 +570,28 @@ class Social extends Component {
                 <h2 id="socialHeader">The Social Corner of <span style={{ fontWeight: 'bolder' }}>The Book Place</span></h2>
               <p style={{ color: 'transparent', fontSize: '1%' }}>...</p>
             </div>
-            <div class="container-fluid">
-              <div class="row row-space">
-                <div class="col-1" style={{ textAlign: 'center' }}>
+            <div className="container-fluid">
+              <div className="row row-space">
+                <div className="col-1" style={{ textAlign: 'center' }}>
                   <form method="POST" action="/api/updateProfilePic" encType="multipart/form-data">
                     <img className="click-img" id='profileImg' onClick={ this.profileClick } alt='userProfile' src={ '/images/user_profiles/' + this.props.profile } style={{ height: '21vh', width: '8vw', borderRadius: '50%' }}></img>
-                    <label id="profileEditLbl" className="text-bold text-warning text-w-shadow" for="profileImg" style={{ marginLeft: '1vw', marginUp: '2vh' }}><i className="fa fw fa-hand-o-up"></i> to Edit</label>
+                    <label id="profileEditLbl" className="text-bold text-warning text-w-shadow" htmlFor="profileImg" style={{ marginLeft: '1vw', marginUp: '2vh' }}><i className="fa fw fa-hand-o-up"></i> to Edit</label>
                     <input accept='image/*' type="file" id="profileInput" name="profileInput" style={{ display: 'none' }}></input>
                     <input type="text" id="uname" name="uname" style={{ display: 'none' }} value={ this.props.username }></input>
                     <button className="btn-warning btn-cool" type="submit" id="profSubmit" style={{ marginTop: '1vh', marginBottom: '1vh', color: 'white', display: 'none' }}>Save</button>
                   </form>
-                  <label id="profileName" for="profileImg" style={{ fontSize: 'xx-large', fontFamily: 'Josefin Sans', color: 'white', fontWeight: 'bold',
+                  <label id="profileName" htmlFor="profileImg" style={{ fontSize: 'xx-large', fontFamily: 'Josefin Sans', color: 'white', fontWeight: 'bold',
                     textShadow: '-1px 0 black, 0 2px black, 2px 0 black, 0 -1px black', marginLeft: '0.5vw' }}>{ this.props.name }</label>
-                  <p for="#profileName" style={{ fontSize: 'large', marginLeft: '1vw', color: 'white', fontWeight: 'bolder', textShadow: '-0.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -0.5px black' }}>{ this.props.status }
+                  <p htmlFor="#profileName" style={{ fontSize: 'large', marginLeft: '1vw', color: 'white', fontWeight: 'bolder', textShadow: '-0.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -0.5px black' }}>{ this.props.status }
                   </p>
                 </div>
-                <div class="col-5" style={{ marginRight: '3vw' }}>
-                  <div class="container" style={{ height: '100%', width: '100%', background: 'rgb(100,100,100,0.3)', color: 'white', textAlign: 'center', marginLeft: '1vw' }}>
-                    <div class='container' style={{ height: '1vh', width: '100%' }}></div>
+                <div className="col-5" style={{ marginRight: '3vw' }}>
+                  <div className="container" style={{ height: '100%', width: '100%', background: 'rgb(100,100,100,0.3)', color: 'white', textAlign: 'center', marginLeft: '1vw' }}>
+                    <div className='container' style={{ height: '1vh', width: '100%' }}></div>
                     <h3 id="h3-title" style={{ textDecoration: 'underline', fontWeight: 'bold', marginBottom: '-0.5vh' }}>Social Feed</h3>
                     <input type="text" id="searchPostsBar" style={{ marginBottom: "1%", borderRadius: '10px', marginTop: '1.25vh', background: 'rgb(255, 253, 251, 0.7)', textAlign: 'center', width: '75%' }} 
                     onKeyUp={this.searchPosts} placeholder="Search for specific keyowrds in posts"/>
-                    <div class='container' id='myScrollable' style={{ height: '65vh', width: '100%', overflowY: 'scrol', overflowX: 'hidden', textAlign: 'center', scrollbarColor: 'rgb(100,100,200,0.6) rgb(100,100,100,0.5)' }}>
+                    <div className='container' id='myScrollable' style={{ height: '65vh', width: '100%', overflowY: 'scrol', overflowX: 'hidden', textAlign: 'center', scrollbarColor: 'rgb(100,100,200,0.6) rgb(100,100,100,0.5)' }}>
                       { this.getPostData() }
                     </div>
                     <div className="container">
@@ -608,26 +608,26 @@ class Social extends Component {
                     </div>
                   </div>
                 </div>
-                <div class="col-5">
-                  <div class="container">
-                    <div class="row text-light" style={{ height: '100%', width: '102%', textAlign: 'center', backgroundColor: 'rgb(70,100,130,0.4)', textDecoration: 'underline' }}>
+                <div className="col-5">
+                  <div className="container">
+                    <div className="row text-light" style={{ height: '100%', width: '102%', textAlign: 'center', backgroundColor: 'rgb(70,100,130,0.4)', textDecoration: 'underline' }}>
                       <h4 style={{ textAlign: 'center', margin: '1vw', fontWeight: 'bolder' }}>Live Chat</h4>
                     </div>
-                    <div class="row">
-                      <div class='container' style={{ position: 'relative', background: 'rgb(70,100,130,0.4)', color: 'white', marginRight: '1vw' }}>
-                        <div class='container' id='myOtrScrollable'>
+                    <div className="row">
+                      <div className='container' style={{ position: 'relative', background: 'rgb(70,100,130,0.4)', color: 'white', marginRight: '1vw' }}>
+                        <div className='container' id='myOtrScrollable'>
                           <div id="isTypingDiv">
                             <span id="isTyping"></span>
-                            <i class="fa fa-spinner fa-pulse fa-fw"></i>
-                            <span class="sr-only"></span>
+                            <i className="fa fa-spinner fa-pulse fa-fw"></i>
+                            <span className="sr-only"></span>
                           </div>
-                          <div class='container-fluid' id='forMsgs' style={{ height: '65vh', width: '100%', overflowY: 'scrol', overflowX: 'hidden', scrollbarColor: 'rgb(100,100,200,0.6) rgb(100,100,100,0.5)' }}>
+                          <div className='container-fluid' id='forMsgs' style={{ height: '65vh', width: '100%', overflowY: 'scrol', overflowX: 'hidden', scrollbarColor: 'rgb(100,100,200,0.6) rgb(100,100,100,0.5)' }}>
                             { this.getMsgData() }
                           </div>
                         </div>
                         <input id='msgToSend' name='msgToSend' type='text' style={{ margin: '1%', height: '5vh', width: '95%', background: 'rgb(255, 253, 251, 0.8)' }} placeholder='Your message here...' onKeyUp={this.isKeyEnter}></input>
-                        <div class='text-right'>
-                          <button class='btn-primary' id='sendMsgBtn' onClick={this.sendMsg} style={{ fontFamily: 'Fugaz One', textShadow: '-1px 0 black, 0 2px black, 2px 0 black, 0 -1px black', 
+                        <div className='text-right'>
+                          <button className='btn-primary' id='sendMsgBtn' onClick={this.sendMsg} style={{ fontFamily: 'Fugaz One', textShadow: '-1px 0 black, 0 2px black, 2px 0 black, 0 -1px black', 
                           boxShadow: '-1px 0 black, 0 2px black, 2px 0 black, 0 -1px black', borderRadius: '15px', marginRight: '1vw', marginBottom: '1vh' }}> Send </button>
                         </div>
                       </div>
@@ -636,28 +636,28 @@ class Social extends Component {
                 </div>
               </div>
             </div>
-            <div class="container-fluid" style={{ verticalAlign: 'bottom', textAlign: 'left', marginTop: '1%', marginBottom: '1vh' }}>
-                <div class="collapse" id="collapseExample">
-                  <div class="card card-body" style={{ background: 'rgba(200,220,220,0.7)' }}>
-                    <div class='form-control text-dark' style={{ border: 'transparent', background: 'transparent' }}>
-                      <div class='row'>
-                        <div class='col-7'>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style={{ visibility: 'hidden' }} onClick={ this.selectTextInput } checked/>
-                            <label class="form-check-label" id='textLabel' for="inlineRadio1" style={{ fontWeight: 'bolder', textDecoration: 'underline', cursor: 'pointer' }}>Text</label>
+            <div className="container-fluid" style={{ verticalAlign: 'bottom', textAlign: 'left', marginTop: '1%', marginBottom: '1vh' }}>
+                <div className="collapse" id="collapseExample">
+                  <div className="card card-body" style={{ background: 'rgba(200,220,220,0.7)' }}>
+                    <div className='form-control text-dark' style={{ border: 'transparent', background: 'transparent' }}>
+                      <div className='row'>
+                        <div className='col-7'>
+                          <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style={{ visibility: 'hidden' }} onClick={ this.selectTextInput } checked/>
+                            <label className="form-check-label" id='textLabel' htmlFor="inlineRadio1" style={{ fontWeight: 'bolder', textDecoration: 'underline', cursor: 'pointer' }}>Text</label>
                           </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style={{ visibility: 'hidden' }} onClick={ this.selectImgInput } />
-                            <label class="form-check-label" style={{ cursor: 'pointer' }} id='imgLabel' for="inlineRadio2">Image</label>
+                          <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style={{ visibility: 'hidden' }} onClick={ this.selectImgInput } />
+                            <label className="form-check-label" style={{ cursor: 'pointer' }} id='imgLabel' htmlFor="inlineRadio2">Image</label>
                           </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" style={{ visibility: 'hidden' }} onClick={ this.selectLinkInput } />
-                            <label class="form-check-label" style={{ cursor: 'pointer' }} id="linkLabel" for="inlineRadio3">Hyperlink</label>
+                          <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" style={{ visibility: 'hidden' }} onClick={ this.selectLinkInput } />
+                            <label className="form-check-label" style={{ cursor: 'pointer' }} id="linkLabel" htmlFor="inlineRadio3">Hyperlink</label>
                           </div>
                         </div>
-                        <div class='form-group col-5 row' style={{ textAlign: 'right' }}>
-                          <label class='col-4' for="shareSelect" style={{ fontSize: 'smaller' }}>Share with: </label>
-                          <select id='shareSelect' name='shareSelect' class="form-control col-8" style={{ width: 'auto',  height: '4vh', fontSize: 'smaller', marginTop: '-1%' }}>
+                        <div className='form-group col-5 row' style={{ textAlign: 'right' }}>
+                          <label className='col-4' htmlFor="shareSelect" style={{ fontSize: 'smaller' }}>Share with: </label>
+                          <select id='shareSelect' name='shareSelect' className="form-control col-8" style={{ width: 'auto',  height: '4vh', fontSize: 'smaller', marginTop: '-1%' }}>
                             <option id='allOption'>All</option>
                           </select>
                         </div>
@@ -665,20 +665,20 @@ class Social extends Component {
                     </div>
                     <div className='container-fluid'>
                       <textarea placeholder='Your post' id='textInput' style={{ width: '100%', height: '40%' }}></textarea>
-                      <form id='imgInput' method='POST' action='/api/postImgUpload' style={{ display: 'none' }} enctype='multipart/form-data'>
+                      <form id='imgInput' method='POST' action='/api/postImgUpload' style={{ display: 'none' }} encType='multipart/form-data'>
                         <input accept='image/*' name='imgFileInput' type='file'/>
                       </form>
                       <input id='linkInput' type='text' style={{ display: 'none', width: '100%', height: 'auto' }} placeholder="Your link" />
                     </div>
-                    <div class='text-right'>
+                    <div className='text-right'>
                       <button style={{ width: '10%', marginTop: '1vh', marginRight: '1vw', fontFamily: 'Fugaz One', textShadow: '-1px 0 black, 0 2px black, 2px 0 black, 0 -1px black', 
-                          boxShadow: '-1px 0 black, 0 2px black, 2px 0 black, 0 -1px black', borderRadius: '15px' }} class="btn-primary" onClick={ this.sendPost }>Post</button>
+                          boxShadow: '-1px 0 black, 0 2px black, 2px 0 black, 0 -1px black', borderRadius: '15px' }} className="btn-primary" onClick={ this.sendPost }>Post</button>
                     </div>
                   </div>                  
                 </div>
-                <button id='newPostBtn' type="button" data-toggle="tooltip" data-placement="right" title="Write new post" class='btn-primary' onClick={ this.scrollInto }
+                <button id='newPostBtn' type="button" data-toggle="tooltip" data-placement="right" title="Write new post" className='btn-primary' onClick={ this.scrollInto }
                 style={{ color: 'blue', background: 'yellow', fontSize: '200%', borderRadius: '50%', border: 'transparent' }}>
-                  <i class="fa fw fa-pencil-square-o" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></i>
+                  <i className="fa fw fa-pencil-square-o" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></i>
                 </button>
               </div>
               <div id='thisIsTheBottom' style={{ color: 'transparent', marginTop: '5vh' }}>Bottom of the Page</div>
