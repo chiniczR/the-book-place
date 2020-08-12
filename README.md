@@ -8,14 +8,14 @@ The application represents an online book shop and social network. Passport.js w
 
 ### Docker
 
-1. Compose
+1. **Compose**
 
 Open the repository's root directory in a terminal and call:
 ```
 docker-compose up
 ```
 
-2. Address
+2. **Address**
 
 Once you see the following output,
 ```
@@ -27,7 +27,7 @@ client_1  | Starting the development server...
 ```
 you can go to http://*ip-address*:3000
 
-3. Check the containers' ID and status (optional)
+3. **Check the containers' ID and status (optional)**
 ```
 docker container ls
 ```
@@ -36,7 +36,7 @@ docker container ls
 
 >*The NPM installation requires a **MongoDB** to be running on the host, on port 27017*
 
-1. Setting local MongoDB
+1. **Setting local MongoDB**
 
   Open */api/database/index.js* and change line 6:
 ```
@@ -55,28 +55,28 @@ const uri = 'mongodb://mongo:27017/the-book-place'
 const uri = 'mongodb://localhost:27017/the-book-place'
 ```
 
-2. API Server
+2. **API Server**
 ```
 cd api
 npm install
 npm run start
 ```
 
-3. Blog/Chat Server
+3. **Blog/Chat Server**
 ```
 cd social
 npm install
 npm run chat
 ```
 
-4. Client
+4. **Client**
 ```
 cd client
 npm install
 npm run start
 ```
 
-5. Go to *http://localhost:3000*
+5. **Go to *http://localhost:3000***
 
 ## Initial Data Import
 
