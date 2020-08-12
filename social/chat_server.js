@@ -6,7 +6,7 @@ const Room = require('./database/models/room')
 
 
 const mongoose = require('mongoose');
-const mongoURI = "mongodb://localhost:27017/the-book-place"; 
+const mongoURI = "mongodb://mongo:27017/the-book-place"; 
 const options = {
     keepAlive: false,
     keepAliveInitialDelay: 300000,

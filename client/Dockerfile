@@ -1,13 +1,19 @@
-FROM node:latest
-# Create app directory
-WORKDIR /usr/src/app
-# Install app dependencies
-COPY package*.json ./
+# pull official base image
+FROM node:13.12.0-alpine
 
+# set working directory
+WORKDIR /app
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install app dependencies
+COPY package.json ./
+COPY package-lock.json ./
 RUN npm install --silent
-# Copy app source code
-COPY . .
 
-#Expose port and start application
-EXPOSE 3000
-CMD ["npm", "run", "start"]
+# add app
+COPY . ./
+
+# start app
+CMD ["npm", "start"] 
