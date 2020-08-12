@@ -36,3 +36,17 @@ cd client
 npm install
 npm run start
 ```
+
+## Initial Data Import
+
+Initial data is provided as .json files, to be imported into the Mongo database, either through the Compass GUI application, or through the mongo CLI, by doing the following:
+
+```
+cd data
+mongoimport --db=the-book-place --collection=books --file=books.json
+mongoimport --db=the-book-place --collection=joinrequests --file=joinrequests.json
+mongoimport --db=the-book-place --collection=orders --file=orders.json
+mongoimport --db=the-book-place --collection=posts --file=posts.json
+mongoimport --db=the-book-place --collection=rooms --file=rooms.json
+mongoimport --db=the-book-place --collection=users --file=users.json
+```

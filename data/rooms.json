@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5e9058ea785e533238644d4b"},"name":"Team Cockroach","admin":"michael","members":["michael","eleanor","janet","chidi","tahani","jason"],"groupPhoto":"teamCockroach.jpg"}
+{"_id":{"$oid":"5ecbe6557ea90393ba5e51f4"},"name":"99 Squad","admin":"holt","members":["holt","peralta","santiago","terry","rosa","charles","gina"],"groupPhoto":"99-squad.jpg"}
+{"_id":{"$oid":"5ecbed647ea90393ba5e51f5"},"name":"Department of Parks & Rec.","admin":"knope","members":["knope","swanson","tom","donna","april"],"groupPhoto":"parksAndRecDep.jpg"}
