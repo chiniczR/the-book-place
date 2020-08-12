@@ -1,0 +1,29 @@
+
+
+@font-face {
+    font-family: Josefin Sans;
+    src: url('/Josefin_Sans/JosefinSans-Regular.ttf');
+}
+@font-face {
+    font-family: Raleway;
+    src: url('/Lato/Lato-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway';
+  height: 100%;
+}
+
+.link-span {
+  color: #FFF;
+  font-size: small;
+  font-weight: bold;
+}
+.link-span:hover {
+  color: yellow;
+  text-decoration: overline;
+  font-weight: bolder;
+}
+
