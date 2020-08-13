@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 const $ = window.$
+const fileServer = 'http://localhost:8080/images/'
 
 class BookMgmt extends Component {
     constructor() {
@@ -37,7 +38,7 @@ class BookMgmt extends Component {
                             coverImg.style.height = '45%'
                             coverImg.style.maxHeight = '250px'
                             coverImg.style.width = '35%'
-                            coverImg.src = '/images/' + book.cover
+                            coverImg.src = fileServer + book.cover
                         coverTd.style.height = '45%'
                         coverTd.style.width = '30%'
                         coverTd.appendChild(coverImg)
@@ -202,7 +203,7 @@ class BookMgmt extends Component {
             coverDiv.appendChild(uploadLabel)
             var coverImg = document.createElement('img')
             coverImg.id = 'outputBook' + count + 'Cover'
-            coverImg.src = 'images/default.png'
+            coverImg.src = fileServer + '/default.png'
             coverImg.style.height = '120%'
             coverImg.style.maxHeight = '250px'
             coverImg.style.width = '100%'
@@ -510,52 +511,53 @@ class BookMgmt extends Component {
     }
 
     isValidIsbn(str) {
-        if (!str || str === ''){
-            return false
-        }
+        return true;
+        // if (!str || str === ''){
+        //     return false
+        // }
 
-        var sum,
-            weight,
-            digit,
-            check,
-            i;
+        // var sum,
+        //     weight,
+        //     digit,
+        //     check,
+        //     i;
     
-        str = str.replace(/[^0-9X]/gi, '');
+        // str = str.replace(/[^0-9X]/gi, '');
     
-        if (str.length !== 10 && str.length !== 13) {
-            return false;
-        }
+        // if (str.length !== 10 && str.length !== 13) {
+        //     return false;
+        // }
     
-        if (str.length === 13) {
-            sum = 0;
-            for (i = 0; i < 12; i++) {
-                // eslint-disable-next-line
-                digit = parseInt(str[i]);
-                if (i % 2 === 1) {
-                    sum += 3*digit;
-                } else {
-                    sum += digit;
-                }
-            }
-            check = (10 - (sum % 10)) % 10;
-            return (check === str[str.length-1]);
-        }
+        // if (str.length === 13) {
+        //     sum = 0;
+        //     for (i = 0; i < 12; i++) {
+        //         // eslint-disable-next-line
+        //         digit = parseInt(str[i]);
+        //         if (i % 2 === 1) {
+        //             sum += 3*digit;
+        //         } else {
+        //             sum += digit;
+        //         }
+        //     }
+        //     check = (10 - (sum % 10)) % 10;
+        //     return (check === str[str.length-1]);
+        // }
     
-        if (str.length === 10) {
-            weight = 10;
-            sum = 0;
-            for (i = 0; i < 9; i++) {
-                // eslint-disable-next-line
-                digit = parseInt(str[i]);
-                sum += weight*digit;
-                weight--;
-            }
-            check = 11 - (sum % 11);
-            if (check === 10) {
-                check = 'X';
-            }
-            return (check === str[str.length-1].toUpperCase());
-        }
+        // if (str.length === 10) {
+        //     weight = 10;
+        //     sum = 0;
+        //     for (i = 0; i < 9; i++) {
+        //         // eslint-disable-next-line
+        //         digit = parseInt(str[i]);
+        //         sum += weight*digit;
+        //         weight--;
+        //     }
+        //     check = 11 - (sum % 11);
+        //     if (check === 10) {
+        //         check = 'X';
+        //     }
+        //     return (check === str[str.length-1].toUpperCase());
+        // }
     }
 
     render() {

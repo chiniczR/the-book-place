@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
+const fileServer = 'http://localhost:8080/images/'
+
 class Contact extends Component {
     constructor() {
         super()
@@ -138,7 +140,7 @@ class Contact extends Component {
                         </div>
                         <div className="col-lg-6" style={{ textAlign: 'left', marginLeft: '-5%' }}>
                           <div className="container">
-                            <img src="images/contact.jpg" style={{ maxHeight: '500px' }} alt="Contact"/>
+                            <img src={fileServer + 'contact.jpg'} style={{ maxHeight: '500px' }} alt="Contact"/>
                           </div>
                         </div>
                       </div>

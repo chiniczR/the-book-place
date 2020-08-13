@@ -11,6 +11,7 @@ var formidable = require('formidable')
 const fs = require('fs')
 var passRecovery = require('./passRecovery')
 const { isNull, isNumber } = require('util')
+var dir_path = __dirname.substr(0,(__dirname.length+1 - '/routes/'.length)) + '/public/images/'
 
 /*
 ** Function to check if a request's session hasn't expired and has an apprporiate user
@@ -196,15 +197,15 @@ router.post('/coverUpload', function(req,res) {
         
             form.on('fileBegin', function (name, file){
                 try {
-                    if (fs.existsSync(__dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/' + file.name)) {
+                    if (fs.existsSync(dir_path + file.name)) {
                       // file exists
                     }
                     else {
-                        file.path = __dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/' + file.name;
+                        file.path = dir_path + file.name;
                     }
                 } 
                 catch(err) {
-                    file.path = __dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/' + file.name;
+                    file.path = dir_path + file.name;
                 }
             });
         
@@ -430,15 +431,15 @@ router.post('/postImgUpload', function(req,res) {
 
             form.on('fileBegin', function (name, file){
                 try {
-                    if (fs.existsSync(__dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/user_posts/' + file.name)) {
+                    if (fs.existsSync(dir_path + 'user_posts/' + file.name)) {
                     // file exists
                     }
                     else {
-                        file.path = __dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/user_posts/' + file.name;
+                        file.path = dir_path + 'user_posts/' + file.name;
                     }
                 } 
                 catch(err) {
-                    file.path = __dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/user_posts/' + file.name;
+                    file.path = dir_path + 'user_posts/' + file.name;
                 }
             });
 
@@ -465,7 +466,7 @@ router.post('/updateProfilePic', function(req,res) {
             console.log(JSON.stringify(form))
             var username, pic;
 
-            console.log('Blabla1')
+            console.log('>>>> Dir name:',__dirname)
             form.parse(req, (err, fields, files) => {
                 console.log('Profile pic update user: ' + fields.uname)
                 username = fields.uname
@@ -475,15 +476,15 @@ router.post('/updateProfilePic', function(req,res) {
                 
             form.on('fileBegin', function (name, file){
                 try {
-                    if (fs.existsSync(__dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/user_profiles/' + file.name)) {
+                    if (fs.existsSync(dir_path + 'user_profiles/' + file.name)) {
                     // file exists
                     }
                     else {
-                        file.path = __dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/user_profiles/' + file.name;
+                        file.path = dir_path + 'user_profiles/' + file.name;
                     }
                 } 
                 catch(err) {
-                    file.path = __dirname.substr(0,(__dirname.length+1 - '/server/routes/'.length)) + '/public/images/user_profiles/' + file.name;
+                    file.path = dir_path + 'user_profiles/' + file.name;
                 }
             });
 

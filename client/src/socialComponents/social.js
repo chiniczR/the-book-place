@@ -4,6 +4,7 @@ import socketIOClient from "socket.io-client";
 
 const $ = window.$
 const socket = socketIOClient('http://localhost:5000');
+const fileServer = 'http://localhost:8080/images/'
 
 class Social extends Component {
   constructor(props) {
@@ -181,7 +182,7 @@ class Social extends Component {
       var parts = post.content.split('|') 
       var prof = this.state.profiles.find(p =>  p['username'] === post.poster)
       prof = prof ? prof['profile'] : 'default1.jpg'
-      var imgLocation = 'images/user_profiles/' + prof
+      var imgLocation = fileServer + 'user_profiles/' + prof
       if ((!groupNames.includes(post.sharedWith) && groupNames !== post.sharedWith) && post.sharedWith.toLowerCase() !== 'all') {
         // alert('"' + post.sharedWith + '" in ' + groupNames.toString() + '?\n' + groupNames.includes(post.sharedWith))
         return ( <div style={{ display: 'none' }} /> )
@@ -202,7 +203,7 @@ class Social extends Component {
               <a className='link' style={{ wordBreak: 'break-all' }} href={ parts[1] }>{ parts[1] }</a>
             }
             { parts[0] === 'img' &&
-              <img src={ '/images/user_posts/' + parts[1] } alt='userPost' style={{ maxHeight: '100%', maxWidth: '100%' }}></img>
+              <img src={ fileServer + 'user_posts/' + parts[1] } alt='userPost' style={{ maxHeight: '100%', maxWidth: '100%' }}></img>
             }
           </div>
           <div className='row' style={{ marginBottom: '1vh' }}>
@@ -442,7 +443,7 @@ class Social extends Component {
       var parts = post.content.split('|') 
       var prof = this.state.profiles.find(p =>  p['username'] === post.poster)
       prof = prof['profile']
-      var imgLocation = 'images/user_profiles/' + prof
+      var imgLocation = fileServer + 'user_profiles/' + prof
       if ((!groupNames.includes(post.sharedWith) && groupNames !== post.sharedWith) && post.sharedWith.toLowerCase() !== 'all') {
         // alert('"' + post.sharedWith + '" in ' + groupNames.toString() + '?\n' + groupNames.includes(post.sharedWith))
         elem = document.createElement('div')
@@ -497,7 +498,7 @@ class Social extends Component {
           }
           else if (parts[0] === 'img') {
             cont = document.createElement('img')
-            cont.src = '/images/user_posts/' + parts[1]
+            cont.src = fileServer + 'user_posts/' + parts[1]
             cont.alt = 'userPost'
             cont.style.maxWidth = '100%'
             cont.style.maxHeight = '100%'
@@ -574,7 +575,7 @@ class Social extends Component {
               <div className="row row-space">
                 <div className="col-1" style={{ textAlign: 'center' }}>
                   <form method="POST" action="/api/updateProfilePic" encType="multipart/form-data">
-                    <img className="click-img" id='profileImg' onClick={ this.profileClick } alt='userProfile' src={ '/images/user_profiles/' + this.props.profile } style={{ height: '21vh', width: '8vw', borderRadius: '50%' }}></img>
+                    <img className="click-img" id='profileImg' onClick={ this.profileClick } alt='userProfile' src={ fileServer + 'user_profiles/' + this.props.profile } style={{ height: '21vh', width: '8vw', borderRadius: '50%' }}></img>
                     <label id="profileEditLbl" className="text-bold text-warning text-w-shadow" htmlFor="profileImg" style={{ marginLeft: '1vw', marginUp: '2vh' }}><i className="fa fw fa-hand-o-up"></i> to Edit</label>
                     <input accept='image/*' type="file" id="profileInput" name="profileInput" style={{ display: 'none' }}></input>
                     <input type="text" id="uname" name="uname" style={{ display: 'none' }} value={ this.props.username }></input>

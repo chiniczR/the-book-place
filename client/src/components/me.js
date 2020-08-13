@@ -5,6 +5,8 @@ const crypto = require('crypto')
 const CryptoJS = require('crypto-js')
 const $ = window.$
 
+const fileServer = 'http://localhost:8080/images/'
+
 class Me extends Component {
     constructor() {
         super()
@@ -85,7 +87,7 @@ class Me extends Component {
                                     profileCol.classList.add('col-2')
                                         var img = document.createElement('img')
                                         img.classList.add('jr-profile')
-                                        img.src = './images/user_profiles/' + jr.requester.profilePic
+                                        img.src = fileServer + 'user_profiles/' + jr.requester.profilePic
                                     profileCol.appendChild(img)
                                 requesterTd.appendChild(profileCol)
                                     var deetsCol = document.createElement('div')
@@ -161,7 +163,7 @@ class Me extends Component {
                         div.classList.add("card", "group");
                             var img = document.createElement('img')
                             img.classList.add('card-img-top')
-                            img.src = './images/groups/' + group.groupPhoto
+                            img.src = fileServer + 'groups/' + group.groupPhoto
                         div.appendChild(img)
                             var body = document.createElement('div')
                             body.classList.add('card-body')

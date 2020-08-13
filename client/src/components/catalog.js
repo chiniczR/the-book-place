@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 const $ = window.$
+const fileServer = 'http://localhost:8080/images/'
 
 class Catalog extends Component {
     constructor() {
@@ -98,7 +99,7 @@ class Catalog extends Component {
              var img = document.createElement('img')
              img.classList.add('card-img-top')
              img.id = 'img' + count.toString()
-             img.src = "../images/" + book.cover.toString().trim()
+             img.src = fileServer + book.cover.toString().trim()
              img.alt = book.title
              img.style.height = "100%"
              imgCap.appendChild(img)

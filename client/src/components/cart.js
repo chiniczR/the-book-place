@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 const $ = window.$
+const fileServer = 'http://localhost:8080/images/'
 
 class Cart extends Component {
     constructor() {
@@ -47,7 +48,7 @@ class Cart extends Component {
                                 txt.indexOf('"cover":') + '"cover":'.length,
                                 txt.indexOf(',"_id":') - 1
                             ) 
-                            img.src = "../images/" + cover.slice(1,cover.length)
+                            img.src = fileServer + cover.slice(1,cover.length)
                             img.style.height = '50%'
                             img.style.width = '40%'
                         coverTd.appendChild(img)
