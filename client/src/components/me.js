@@ -398,7 +398,7 @@ class Me extends Component {
                     <h5>Requests to Join Your Groups</h5>
                     <div className="container scrollable-sm" id="requestsDiv">
                         <table className="jrs-table">
-                                <thead className="bg-jrs-head bg-secondary text-light">
+                                <thead className="bg-dark text-light">
                                     <tr>
                                         <th className="lg">Requester</th>
                                         <th>Group</th>

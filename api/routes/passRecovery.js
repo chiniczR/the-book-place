@@ -11,6 +11,7 @@ var email = process.env.MAILER_EMAIL_ID || 'recovery.thebookplace@gmail.com'
 var pass = process.env.MAILER_PASSWORD || 'thebookpalace123'
 var nodemailer = require('nodemailer');
 var Handlebars = require('handlebars');
+var host = '172.18.0.5'
 
 
 var smtpTransport = nodemailer.createTransport({
@@ -75,7 +76,7 @@ exports.forgot_password = function(req, res) {
           template: 'forgot-password-email',
           subject: 'Password help has arrived!',
           context: {
-            url: 'http://localhost:3000/reset-password/' + token,
+            url: 'http://' + host + ':3000/reset-password/' + token,
             name: user.firstName,
             content: 'You requested for a password reset, kindly use the link below to reset your password.'
           }
