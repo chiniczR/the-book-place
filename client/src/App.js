@@ -419,7 +419,9 @@ class App extends Component {
     return function() {
       if (document.getElementById('contactTab') && document.getElementById('aboutTab')) {
         document.getElementById('contactTab').classList.remove('active')
-        document.getElementById('catalogTab').classList.remove('active')
+        if (document.getElementById('catalogTab')) {
+          document.getElementById('catalogTab').classList.remove('active')
+        }
         if (document.getElementById('userMgmtTab')) {
           document.getElementById('userMgmtTab').classList.remove('active')
         }
@@ -442,7 +444,9 @@ class App extends Component {
     return function() {
       if (document.getElementById('contactTab') && document.getElementById('aboutTab')) {
         document.getElementById('aboutTab').classList.remove('active')
-        document.getElementById('catalogTab').classList.remove('active')
+        if (document.getElementById('catalogTab')) {
+          document.getElementById('catalogTab').classList.remove('active')
+        }
         if (document.getElementById('userMgmtTab')) {
           document.getElementById('userMgmtTab').classList.remove('active')
         }
