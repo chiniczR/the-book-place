@@ -3,14 +3,8 @@ const router = express.Router()
 const User = require('../database/models/user')
 const passport = require('../passport')
 
-router.all('/*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-
 router.post('/', (req, res) => {
-    console.log('user signup');
+    console.log('User signup');
     const pic = 'default' + (Math.floor(Math.random() * 5) + 1) + '.jpg'
     const phrase = 'I\'m on The Book Place!'
     const { username, password, passSalt,
@@ -48,8 +42,6 @@ router.post('/', (req, res) => {
 })
 
 router.post('/find', function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   console.log('user find');
   //console.log('req.body = ' + JSON.stringify(req.body))
   const username = req.body.username
