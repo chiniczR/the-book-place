@@ -1,12 +1,5 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-mongoose.promise = Promise
-
-// var CounterSchema = Schema({
-//     _id: {type: String, required: true},
-//     seq: { type: Number, default: 0 }
-// });
-// var counter = mongoose.model('counter', CounterSchema)
 
 // Define orderSchema
 const orderSchema = new Schema({

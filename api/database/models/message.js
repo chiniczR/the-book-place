@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-mongoose.promise = Promise
 
 // Define messageSchema
 const messageSchema = new Schema({
